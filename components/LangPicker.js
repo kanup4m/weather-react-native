@@ -13,8 +13,8 @@ export default LangPicker = () => {
                 mode="dropdown"
                 itemStyle={{ fontSize: 12 }}
             >
-                <Picker.Item label="Hindi" value="hi" />
                 <Picker.Item label="English" value="en" />
+                <Picker.Item label="Hindi" value="hi" />
                 <Picker.Item label="Russian" value="ru" />
                 <Picker.Item label="Spanish" value="sp" />
 
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     lang: {
         height: 50,
         width: 150,
-        marginTop: "50%",
+        marginTop: "30%",
         marginLeft: "37%"
     },
 })

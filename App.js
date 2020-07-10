@@ -23,8 +23,8 @@ export default function App() {
 
               if (route.name === 'Current') {
                 iconName = focused
-                  ? 'ios-thermometer'
-                  : 'md-thermometer';
+                  ? 'md-thermometer'
+                  : 'ios-thermometer';
               } else if (route.name === 'Hourly') {
                 iconName = focused ? 'ios-time' : 'md-time';
               } else if (route.name === 'Daily') {
