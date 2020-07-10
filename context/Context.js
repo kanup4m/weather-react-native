@@ -9,9 +9,10 @@ export default function ContextProvider(props) {
     const [errorMessage, setErrorMessage] = useState(null)
     const [data, setWeather] = useState(null)
     const [units, setUnits] = useState('metric')
+    const [language, setLanguage] = useState('en')
     useEffect(() => {
         load()
-    }, [])
+    }, [units, language])
 
     async function load() {
         setWeather(null)
@@ -23,7 +24,7 @@ export default function ContextProvider(props) {
             }
             const location = await Location.getCurrentPositionAsync()
             const { latitude, longitude } = location.coords
-            const url = `${BASE_URL}lat=${latitude}&lon=${longitude}&units=metric&appid=${KEY}`
+            const url = `${BASE_URL}lat=${latitude}&lon=${longitude}&lang=${language}&units=${units}&appid=${KEY}`
             const response = await fetch(url)
             const result = await response.json()
             if (response.ok) {
@@ -39,7 +40,7 @@ export default function ContextProvider(props) {
         }
     }
     return (
-        <LocalContext.Provider value={{ data, errorMessage, load, units }}>
+        <LocalContext.Provider value={{ data, errorMessage, load, units, setUnits, language, setLanguage }}>
             {props.children}
         </LocalContext.Provider>
     );

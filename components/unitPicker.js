@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { View, Text, StyleSheet, Platform, ActivityIndicator } from 'react-native'
 import { Picker } from '@react-native-community/picker'
-export default UnitPicker = ({ units, setUnits }) => {
+import { LocalContext } from '../context/Context'
+
+export default UnitPicker = () => {
+    const { units, setUnits } = useContext(LocalContext)
     return (
         <View style={styles.units}>
             <Picker
@@ -12,6 +15,7 @@ export default UnitPicker = ({ units, setUnits }) => {
             >
                 <Picker.Item label="°C" value="metric" />
                 <Picker.Item label="°F" value="imperial" />
+                <Picker.Item label="K" value="default" />
             </Picker>
         </View>
     );

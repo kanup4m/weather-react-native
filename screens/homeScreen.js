@@ -6,6 +6,7 @@ import { colors } from '../utils/index'
 import ReloadIcon from '../components/reloadIcon'
 import WeatherDetails from '../components/weatherDetail';
 import { LocalContext } from '../context/Context'
+import LangPicker from '../components/LangPicker';
 
 // import { KEY } from 'react-native-dotenv'
 
@@ -17,9 +18,10 @@ export default function HomePage() {
         return (
             <View style={styles.container}>
                 <View style={styles.main}>
-                    {/* <UnitPicker units={units} setUnits={setUnits} /> */}
-                    <ReloadIcon load={load} />
+                    <UnitPicker />
+                    <ReloadIcon />
                     <WeatherInfo currentWeather={data} />
+                    <LangPicker />
                 </View>
                 <WeatherDetails currentWeather={data} unitsSystem={units} />
             </View>

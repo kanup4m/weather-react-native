@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { View, Platform, StyleSheet } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 import { colors } from '../utils/index'
-
-export default function ReloadIcon({ load }) {
+import { LocalContext } from '../context/Context'
+export default function ReloadIcon() {
+    const { load } = useContext(LocalContext)
     const reloadIconName = Platform.OS === 'ios' ? 'ios-refresh' : 'md-refresh'
     return (
         <View style={styles.reloadIcon}>
