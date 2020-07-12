@@ -8,7 +8,6 @@ import WeatherDetails from '../components/weatherDetail';
 import { LocalContext } from '../context/Context'
 import LangPicker from '../components/LangPicker';
 
-// import { KEY } from 'react-native-dotenv'
 
 
 const { PRIMARY_COLOR, SECONDARY_COLOR } = colors
@@ -20,10 +19,10 @@ export default function HomePage() {
         return (
             <View style={styles.container}>
                 <View style={styles.main}>
-                    <UnitPicker />
+                    {/* <UnitPicker /> */}
                     <ReloadIcon />
                     <WeatherInfo currentWeather={data} />
-                    <LangPicker />
+                    {/* <LangPicker /> */}
                 </View>
                 <WeatherDetails currentWeather={data} unitsSystem={units} />
             </View>
@@ -32,7 +31,7 @@ export default function HomePage() {
     else if (errorMessage) {
         return (
             <View style={styles.container}>
-                <ReloadIcon load={load} />
+                <ReloadIcon />
                 <Image
                     source={require('../assets/error.png')}
 

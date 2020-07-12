@@ -1,8 +1,9 @@
 import React, { createContext, useState, useEffect } from 'react';
 import * as Location from 'expo-location'
+import { KEY } from 'react-native-dotenv'
 
 export const LocalContext = createContext()
-const KEY = '083e381bc5a1ba0fc052f4988ccde42e'
+// const KEY = '083e381bc5a1ba0fc052f4988ccde42e'
 const BASE_URL = 'https://api.openweathermap.org/data/2.5/onecall?'
 
 export default function ContextProvider(props) {

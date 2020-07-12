@@ -2,6 +2,9 @@ import React, { useContext } from 'react';
 import { View, Text, StyleSheet, Platform, ActivityIndicator } from 'react-native'
 import { Picker } from '@react-native-community/picker'
 import { LocalContext } from '../context/Context'
+import { colors } from '../utils/index'
+const { BORDER_COLOR } = colors
+
 
 export default UnitPicker = () => {
     const { units, setUnits } = useContext(LocalContext)
@@ -23,18 +26,10 @@ export default UnitPicker = () => {
 
 const styles = StyleSheet.create({
     units: {
-        position: 'absolute',
-        ...Platform.select({
-            ios: {
-                top: -30,
-            },
-            android: {
-                top: 30,
-            },
-        }),
-
-        left: 20,
         height: 50,
         width: 100,
+        borderWidth: 1,
+        borderColor: BORDER_COLOR,
+        borderRadius: 10,
     },
 })

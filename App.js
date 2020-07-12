@@ -7,6 +7,7 @@ import Hourly from './screens/Hourly'
 import { colors } from './utils/index'
 import { Ionicons } from '@expo/vector-icons';
 import Daily from './screens/Daily';
+import Settings from './screens/Settings';
 
 const Tab = createBottomTabNavigator();
 const { PRIMARY_COLOR, SECONDARY_COLOR } = colors
@@ -30,6 +31,9 @@ export default function App() {
               } else if (route.name === 'Daily') {
                 iconName = focused ? 'md-calendar' : 'ios-calendar';
               }
+              else if (route.name === 'Setting') {
+                iconName = focused ? 'md-settings' : 'ios-settings';
+              }
 
               return <Ionicons name={iconName} size={size} color={color} />;
             },
@@ -42,6 +46,8 @@ export default function App() {
           <Tab.Screen name="Current" component={HomeScreen} />
           <Tab.Screen name="Hourly" component={Hourly} />
           <Tab.Screen name="Daily" component={Daily} />
+          <Tab.Screen name="Setting" component={Settings} />
+
         </Tab.Navigator>
       </NavigationContainer>
     </ContextProvider>
