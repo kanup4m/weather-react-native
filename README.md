@@ -6,7 +6,8 @@ Minimiliastic weather app made with expo and react-native.
 
 2- Create .env in root directory.
 
-3- Add your openweather key to .env file.
+3- Add your openweather key to .env file. 
+   `KEY=YOUR OPENWEATHER KEY`
 
 4- Run `npm install`
 
