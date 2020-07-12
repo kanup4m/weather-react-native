@@ -50,7 +50,8 @@ export default function Hourly() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        marginTop: Constant.statusBarHeight
+        marginTop: Constant.statusBarHeight,
+        backgroundColor: '#fff',
     },
     text: {
         color: PRIMARY_COLOR,
